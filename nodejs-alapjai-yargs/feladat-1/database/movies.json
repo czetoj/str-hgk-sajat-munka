@@ -1,0 +1,19 @@
+{
+    "movies": [
+        {
+            "id": 1,
+            "producer": "Producer",
+            "title": "Elég"
+        },
+        {
+            "id": 2,
+            "producer": "Producer2",
+            "title": "Elég2"
+        },
+        {
+            "id": 3,
+            "producer": "Producer3",
+            "title": "Elég3"
+        }
+    ]
+}
