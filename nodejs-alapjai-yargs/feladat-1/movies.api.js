@@ -5,8 +5,8 @@ const MoviesApi = (path, prop) => ({
     const data = await readFile(path)
     return JSON.parse(data)[prop]
   },
-  save(data) {
-    writeFile(path, JSON.stringify({ [prop]: data }))
+  async save(data) {
+    await writeFile(path, JSON.stringify({ [prop]: data }))
   }
 })
 
