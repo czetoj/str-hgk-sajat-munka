@@ -1,0 +1,22 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "termék1",
+            "price": 45,
+            "count": 15
+        },
+        {
+            "id": 1,
+            "name": "termék2",
+            "price": 450,
+            "count": 150
+        },
+        {
+            "id": 1,
+            "name": "termék3",
+            "price": 4500,
+            "count": 1
+        }
+    ]
+}
