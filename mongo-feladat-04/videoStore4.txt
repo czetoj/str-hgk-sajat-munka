@@ -1,0 +1,97 @@
+1. use videoStore
+db.createCollection("cinemas", {
+    validator: {
+        $jsonSchema: {
+            required: ["_id", "name", "movies", "address"],
+            properties: {
+                _id:{bsonType: "int"},
+                name: {bsonType: "string", pattern: "[0-9a-zA-Z ]+"},
+                movies: {bsonType: "array"},
+                address: {bsonType: "object", required: ["city"], properties: {city: {bsonType: "string"}}}
+            }
+        }
+    }
+}
+)
+db.cinemas.insertMany([
+    {_id: NumberInt(1), name: "Cinema1", movies: [
+        ObjectId("60dd65951e3e07ce4f86abd0"),
+        ObjectId("60dd65951e3e07ce4f86abd1"),
+        ObjectId("60dd65951e3e07ce4f86abd2")
+    ],
+    address: {city: "Budapest"}},
+    {_id: NumberInt(2), name: "Cinema2", movies: [
+        ObjectId("60dd65951e3e07ce4f86abd3"),
+        ObjectId("60dd65951e3e07ce4f86abd4"),
+        ObjectId("60dd65951e3e07ce4f86abd5")
+    ],
+    address: {city: "Győr"}},
+    {_id: NumberInt(3), name: "Cinema3", movies: [
+        ObjectId("60dd65951e3e07ce4f86abd6"),
+        ObjectId("60dd65951e3e07ce4f86abd7"),
+        ObjectId("60dd65951e3e07ce4f86abd8")
+    ],
+    address: {city: "Pécs"}},
+])
+2. db.cinemas.aggregate([
+    {$match: {_id: 1}},
+    {$lookup: {
+        from: "movies",
+        localField: "movies",
+        foreignField: "_id",
+        as: "movies"
+    }}
+]).pretty()
+3. db.cinemas.aggregate([
+    {$match: {_id: 1}},
+    {$lookup: {
+        from: "movies",
+        localField: "movies",
+        foreignField: "_id",
+        as: "movies"
+    }},
+    {$project: {
+        _id: 0,
+        movies: 1
+    }}
+]).pretty()
+4. Done
+5. db.directors.aggregate([
+    {$match: {_id: 1}},
+    {$lookup: {
+        from: "movies",
+        localField: "movies",
+        foreignField: "_id",
+        as: "movies"
+    }},
+    {$project: {
+        _id:0,
+        movies: 1
+    }}
+]).pretty()
+6. db.directors.aggregate([
+    {$match: {name: "James Cameron"}},
+    {$lookup: {
+        from: "movies",
+        localField: "movies",
+        foreignField: "_id",
+        as: "movies"
+    }},
+    {$project: {
+        _id:0,
+        name: 1,
+        "movies.title":1
+    }}
+]).pretty()
+7. db.movies.aggregate([
+    {$set: {rateAvg: {$avg: "$ratings"}}},
+    {$project: {
+        _id: 0,
+        title: 1,
+        rateAvg: 1
+    }},
+    {$sort: {
+        rateAvg: -1
+    }},
+    {$limit: 1}
+]).pretty()
