@@ -1,0 +1,30 @@
+1. use videoStore
+2-3. db.movies.insertMany([
+    {title: "Avatar", category: "fantasy", director: "Steven Spielberg"},
+    {title: "Titanic", category: "fantasy", director: "Steven Spielberg"},
+    {title: "Terminator", category: "fantasy", director: "Steven Spielberg"},
+    {title: "E.T.", category: "fantasy", director: "Steven Spielberg"},
+    {title: "Shark", category: "action", director: "Clint Eastwood"},
+    {title: "Ready player one", category: "action", director: "Clint Eastwood"},
+    {title: "Green book", category: "action", director: "Clint Eastwood"},
+    {title: "Millionare baby", category: "romantic", director: "James Cameron"},
+    {title: "Gran Torino", category: "romantic", director: "James Cameron"},
+    {title: "Terminator 2", category: "romantic", director: "James Cameron"},
+])
+4. db.movies.updateMany({}, {$set:{ratings: []}})
+5. db.movies.updateOne({title:"Shark"}, {$push: {ratings: { $each: [5,4,3]}}})
+   db.movies.updateOne({title:"E.T."}, {$push: {ratings: { $each: [2,4,1]}}})
+   db.movies.updateOne({title:"Green book"}, {$push: {ratings: { $each: [1,2,3]}}})
+6. db.movies.updateMany({}, {$set: {releaseYear: 2000}})
+7. db.movies.updateMany({category: "fantasy"}, {$set: {category: "FANTASY"}})
+   db.movies.updateMany({category: "action"}, {$set: {category: "ACTION"}})
+   db.movies.updateMany({category: "romantic"}, {$set: {category: "ROMANTIC"}})
+8. db.movies.find()
+9. pwd()
+10. function setYearToMovies() {
+    const titles = ["Avatar", "Titanic", "Terminator", "E.T.", "Shark", "Ready player one", "Green Book", "Millionare baby", "Gran Torino", "Terminator 2"];
+    const releaseYear = [1983, 1984, 1988, 1994, 1995, 1998, 2003, 2005, 2008, 2012];
+    releaseYear.forEach((item, index) => db.movies.updateOne({title: titles[index]}, {$set:{releaseYear: item}}))
+}
+setYearToMovies();
+load("C:\\Webdev\\Training360\\FullStack\\str-hgk-sajat-munka\\mongo-feladat-01\\setYearToMovies.js")
