@@ -1,0 +1,20 @@
+1. use videoStore
+2. db.movies.find({category: {$in: ["ACTION", "ROMANTIC"]}}).count()
+3. let fantasyDb = db.movies.find({category: "FANTASY"}, {title: 1, category: 1, _id: 0})
+4. fantasyDb.forEach(item => 
+    print(item.title, item.category)
+)
+5. db.movies.find({}, {_id:0, title: 1}).sort({_id: -1})
+6. db.movies.find({}, {_id:0, title:1, category:1, releaseYear: 1}).sort({category:1, releaseYear: -1})
+7. db.movies.find({category: "ACTION"}).sort({releaseYear: 1})[0]
+8. db.movies.find({}, {_id:0, title: 1, releaseYear: 1}).sort({releaseYear: 1}).limit(2)
+9. db.movies.find({category: "ROMANTIC"}, {_id:0, title: 1, releaseYear:1}).sort({releaseYear: -1})[1]
+10. const paging3 = () => {
+    const list = db.movies.find()
+    const number = db.movies.find().count()
+    for (let i = 0; i < number; i++) {
+        if (i>0 && i%3 === 0) print('--page over--');
+        print(list[i].title, ":", list[i].category.toLowerCase(), 'movie');
+    }
+}
+paging3()
