@@ -1,5 +1,6 @@
 const data = require('../database/person.json')
 const createError = require('http-errors');
+const Person = require('../models/person')
 
 exports.getCount = (req, res) => {
     let result = data.filter(item => item.vaccine !== "").length
@@ -21,7 +22,7 @@ exports.getVaccinatedJSON = (req, res) => {
     res.json(result)
 };
 
-exports.getVaccinatedId = (req, res, next) => {
+exports.getVaccinatedId = (req, res) => {
     const person = data.find(item => item.id === parseInt(req.params.id));
     if (!person) {
         return next(new createError.NotFound("Person not found"));
@@ -33,7 +34,7 @@ exports.getVaccinatedId = (req, res, next) => {
     }
 }
 
-exports.postPerson = (req, res, next) => {
+exports.postPerson = (req, res) => {
     const { lastName, firstName, vaccine } = req.body;
     if (!lastName || !firstName || !vaccine) {
         return next(
@@ -48,7 +49,7 @@ exports.postPerson = (req, res, next) => {
     res.json(newPerson);
 }
 
-exports.putId = (req, res, next) => {
+exports.putId = (req, res) => {
     const id = req.params.id
     const vaccine = req.params.vaccine
     const index = data.findIndex(item => item.id === Number(id));
@@ -70,7 +71,7 @@ exports.putId = (req, res, next) => {
     res.json(data);
 }
 
-exports.deletePersonsWithVaccineName = (req, res, next) => {
+exports.deletePersonsWithVaccineName = (req, res) => {
     const vaccine = req.params.vaccine
 
     if (!vaccine) {
