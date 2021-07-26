@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egészségügyi Szuri Tár</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <a href="/person/count">
+        <button class="btn btn-success m-5">Beoltott személyek száma</button>
+    </a>
+
+    <a href="/person/vaccinated" class="mt-5">
+        <button class="btn btn-success m-5">Beoltott személyek listája</button>
+    </a>
+
+    <h3 class="m-3">Új ügyfél létrehozása</h3>
+    <form action="/person" method="post" class="m-3">
+        <div>
+            <div class="form-group">
+                <label for="firstName">Keresztnév</label>
+                <input type="text" class="form-control" name="firstName" id="firstName">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Vezetéknév</label>
+                <input type="text" class="form-control" name="lastName" id="lastName">
+            </div>
+            <div class="form-group">
+                <label for="vaccine">Oltóanyag</label>
+                <input type="text" class="form-control" name="vaccine" id="vaccine">
+            </div>
+
+        </div>
+
+        <button class="btn btn-info" type="submit">Új person létrehozása</button>
+    </form>
+
+
+
+</body>
+
+</html>
