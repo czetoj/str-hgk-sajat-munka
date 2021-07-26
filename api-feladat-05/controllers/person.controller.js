@@ -1,29 +1,33 @@
-const data = require('../database/person.json')
+
 const createError = require('http-errors');
 const Person = require('../models/person')
 
-exports.getCount = (req, res) => {
-    let result = data.filter(item => item.vaccine !== "").length
-    res.render('count', { result })
+exports.getCount = async (req, res) => {
+    let people = await Person.find()
+    let result = people.filter(item => item.vaccine !== "").length
+    res.render('count', { result: result })
 };
 
-exports.getCountJSON = (req, res) => {
-    let result = data.filter(item => item.vaccine !== "").length
+exports.getCountJSON = async (req, res) => {
+    let people = await Person.find()
+    let result = people.filter(item => item.vaccine !== "").length
     res.json(result)
 };
 
-exports.getVaccinated = (req, res) => {
-    let result = data.filter(item => item.vaccine !== "")
-    res.render('vaccinated', { result })
+exports.getVaccinated = async (req, res) => {
+    let people = await Person.find()
+    let result = people.filter(item => item.vaccine !== "")
+    res.render('vaccinated', { result: result })
 };
 
-exports.getVaccinatedJSON = (req, res) => {
-    let result = data.filter(item => item.vaccine !== "")
-    res.json(result)
+exports.getVaccinatedJSON = async (req, res) => {
+    let people = await Person.find()
+    let result = people.filter(item => item.vaccine !== "")
+    res.json(people)
 };
 
-exports.getVaccinatedId = (req, res) => {
-    const person = data.find(item => item.id === parseInt(req.params.id));
+exports.getVaccinatedId = async (req, res, next) => {
+    const person = await Person.findById(req.params.id);
     if (!person) {
         return next(new createError.NotFound("Person not found"));
     }
@@ -34,7 +38,7 @@ exports.getVaccinatedId = (req, res) => {
     }
 }
 
-exports.postPerson = (req, res) => {
+exports.postPerson = (req, res, next) => {
     const { lastName, firstName, vaccine } = req.body;
     if (!lastName || !firstName || !vaccine) {
         return next(
@@ -42,18 +46,27 @@ exports.postPerson = (req, res) => {
         );
     }
 
-    const newPerson = req.body;
-    newPerson.id = data[data.length - 1].id + 1;
-    data.push(newPerson);
-    res.status(201);
-    res.json(newPerson);
+    const newPerson = new Person({
+        firstName: firstName,
+        lastName: lastName,
+        vaccine: vaccine
+    });
+
+    Person.insertOne(newPerson)
+        .then(data => {
+            res.status(201);
+            res.json(data);
+        });
 }
 
-exports.putId = (req, res) => {
+exports.putId = async (req, res, next) => {
     const id = req.params.id
     const vaccine = req.params.vaccine
-    const index = data.findIndex(item => item.id === Number(id));
-    const { firstName, lastName } = data[index];
+
+    const person = await Person.findById(req.params.id);
+    if (!person) {
+        return next(new createError.NotFound("Person is not found"));
+    }
 
     if (!lastName || !firstName || !vaccine) {
         return next(
@@ -61,24 +74,43 @@ exports.putId = (req, res) => {
         );
     }
 
-    data[index] = {
-        id,
-        firstName,
-        lastName,
-        vaccine
+    const update = {
+        firstName: person.firstName,
+        lastName: person.lastName,
+        vaccine: vaccine
     };
 
-    res.json(data);
+    let personWithVaccine = {};
+    try {
+        personWithVaccine = await Person.findByIdAndUpdate(id, update, {
+            new: true,
+            useFindAndModify: false
+        });
+    } catch (err) {
+        return next(new createError.BadRequest(err));
+    }
+
+    return res.json(personWithVaccine);
 }
 
-exports.deletePersonsWithVaccineName = (req, res) => {
+exports.deletePersonsWithVaccineName = async (req, res, next) => {
     const vaccine = req.params.vaccine
 
     if (!vaccine) {
         return next(new createError.NotFound("Vaccine not found"));
     }
 
-    let result = data.filter(item => item.vaccine !== vaccine);
-    data = [...result]
-    res.json(data)
+    const people = await Person.find();
+    let result = people.filter(item => item.vaccine === vaccina);
+    let resultIdArray = result.map(item => item.id);
+
+    try {
+        resultIdArray.forEach(async (item) => {
+            await Person.findByIdAndDelete(item);
+        })
+    } catch (err) {
+        return next(new createError.NotFound("Vaccine is not found"));
+    }
+
+    res.json(result)
 }
