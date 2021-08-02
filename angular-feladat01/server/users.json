@@ -1,0 +1,244 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "first_name": "Charlie",
+            "last_name": "Firpo",
+            "email": "seyden0@merriam-webster.com",
+            "password": "$2a$10$qCcDsV1BLCHBKVhaJLOLSuwZB8Q4fGxBc52IlwLSCUawomdZ4JGvq",
+            "role": "3"
+        },
+        {
+            "id": 2,
+            "first_name": "Finn",
+            "last_name": "Upjohn",
+            "email": "fupjohn1@paypal.com",
+            "password": "$2a$10$xW1vJhe3xczrnTQOZYlaY.DV/UbYal1.lc2d9ip6tw3.6cWv8XoQ.",
+            "role": "1"
+        },
+        {
+            "id": 3,
+            "first_name": "Nickey",
+            "last_name": "Tyt",
+            "email": "ntyt2@psu.edu",
+            "password": "$2a$10$eZMp/S6cJtgOTy94BKQaAun/m.f3eIu8smIpIi2tvQUgGAiwxfDsy",
+            "role": 3
+        },
+        {
+            "id": 4,
+            "first_name": "Goldia",
+            "last_name": "Bloodworthe",
+            "email": "gbloodworthe3@mail.ru",
+            "password": "$2a$10$XCaD5qH6cy8b2Zs6.X21dON.WZXC.4uYI6UuGhyqSWzMSyGJ9fQQ6",
+            "role": 1
+        },
+        {
+            "id": 5,
+            "first_name": "Berti",
+            "last_name": "Farthing",
+            "email": "bfarthing4@nymag.com",
+            "password": "$2a$10$zl6J2sTRSOemUNRZ7Iq3DuxNZwCyi4AAOp6jB2V/U7bEM7OlJVqF2",
+            "role": 3
+        },
+        {
+            "id": 6,
+            "first_name": "Elihu",
+            "last_name": "Lammie",
+            "email": "elammie5@google.co.uk",
+            "password": "$2a$10$Yik3e5FNRzoeSkmaHXsOwu/OY34LzVLK.qikjnwuSELthvRYY2PIK",
+            "role": 1
+        },
+        {
+            "id": 7,
+            "first_name": "Misty",
+            "last_name": "Comfort",
+            "email": "mcomfort6@github.io",
+            "password": "$2a$10$ZrOZ40dYWInLc0zpQZ6Cg.CBqjuTRynd6ZaD8bJiEAYoeAnilCI6W",
+            "role": 2
+        },
+        {
+            "id": 8,
+            "first_name": "Shana",
+            "last_name": "Swyne",
+            "email": "sswyne7@latimes.com",
+            "password": "$2a$10$gNlsQbADZkQWP4KdP4Y8dOUPnLApUf81vyQe6Cw8rIxPgJmrsODtq",
+            "role": 1
+        },
+        {
+            "id": 9,
+            "first_name": "Wake",
+            "last_name": "Pickworth",
+            "email": "wpickworth8@about.com",
+            "password": "$2a$10$33qbZfZnTvwP4lK3gHwOWOJmQyVFyBBkcXvRa75L.GffaQzpbiM0u",
+            "role": 2
+        },
+        {
+            "id": 10,
+            "first_name": "Marcellus",
+            "last_name": "Melchior",
+            "email": "mmelchior9@weibo.com",
+            "password": "$2a$10$ChNaXJ53hTt09Fgiu83U7.1jxyLUkhLi1PceeCr3RgRq8auXBdWOy",
+            "role": 2
+        },
+        {
+            "id": 11,
+            "first_name": "Jorgan",
+            "last_name": "Perrycost",
+            "email": "jperrycosta@whitehouse.gov",
+            "password": "$2a$10$qKO3YDLLxTTJ2C3/y7RCUev/6k3nfcnVrtds5R7VCeH2srRL5WbYG",
+            "role": 3
+        },
+        {
+            "id": 12,
+            "first_name": "Rossy",
+            "last_name": "Ellicott",
+            "email": "rellicottb@tinyurl.com",
+            "password": "$2a$10$krfOmXKtbKhEqvZ7iTHR9uHyjWOKdo5QbRCGve3ueTyd1lgahcweS",
+            "role": 3
+        },
+        {
+            "id": 13,
+            "first_name": "Simonne",
+            "last_name": "Hourston",
+            "email": "shourstonc@constantcontact.com",
+            "password": "$2a$10$PcRbxUXOOzFlLNFS3BK8p.Uq6/LomtuZxO8oxEn2xRxbGlWxLTcTG",
+            "role": 3
+        },
+        {
+            "id": 14,
+            "first_name": "Darcy",
+            "last_name": "Everett",
+            "email": "deverettd@delicious.com",
+            "password": "$2a$10$zQOYdjtr0pOVudqMnu.G.uEK3IdQ4SGHVkFUrsiplwuKiFWIJe18O",
+            "role": 1
+        },
+        {
+            "id": 15,
+            "first_name": "Tuck",
+            "last_name": "Wallas",
+            "email": "twallase@odnoklassniki.ru",
+            "password": "$2a$10$hYfGi77WgLdUd4aoo9WwjeVzTFxf9sfoA8adgtzoDdTcF4oWNDJR2",
+            "role": 3
+        },
+        {
+            "id": 16,
+            "first_name": "Piggy",
+            "last_name": "Jefferies",
+            "email": "pjefferiesf@constantcontact.com",
+            "password": "$2a$10$IDE0nVFotJlYtFB9tV6nJu/nxMhthQqawZgeSFDbQxOc4zW9rhEO.",
+            "role": 1
+        },
+        {
+            "id": 17,
+            "first_name": "Bob",
+            "last_name": "Mowat",
+            "email": "dmowatg@cisco.com",
+            "password": "$2a$10$YCkHdz8M86Ts26FDIVJM7.wmADU3Zwb5AF3ooulapRwcfFTukMgqu",
+            "role": "1"
+        },
+        {
+            "id": 18,
+            "first_name": "Colin",
+            "last_name": "Nolin",
+            "email": "cnolinh@businessweek.com",
+            "password": "$2a$10$B5Yd7KqVrq2bHD25Wqk0M.t64hmIXyQWysxIvm7JK7xZRd1w9VXAC",
+            "role": 1
+        },
+        {
+            "id": 19,
+            "first_name": "Anallese",
+            "last_name": "Nobles",
+            "email": "anoblesi@jimdo.com",
+            "password": "$2a$10$F69RWlaK2gqCKWlS4ya4bey7fA/nwXxoCvkBMymn4yRIquElfaOQ.",
+            "role": 3
+        },
+        {
+            "id": 20,
+            "first_name": "Wendell",
+            "last_name": "Knok",
+            "email": "wknokj@blinklist.com",
+            "password": "$2a$10$EFOsSYZJzOYk1GZkYaKu2uQ8aOSZ5O60LnsA.3Pr/m0L5pOnTuEhG",
+            "role": 1
+        },
+        {
+            "id": 21,
+            "first_name": "Beckie",
+            "last_name": "Emmert",
+            "email": "bemmertk@yandex.ru",
+            "password": "$2a$10$bn1PObyAefhkkrtirJZuzeGbqeZOfvjbJw.ijjM4fauoAi7JZpYMS",
+            "role": 2
+        },
+        {
+            "id": 22,
+            "first_name": "Basile",
+            "last_name": "Daines",
+            "email": "bdainesl@google.cn",
+            "password": "$2a$10$ctoztby6fPhpVOirXV6w3uyX/P/KVMsUks1l8c5qHGF6aShv5XEG2",
+            "role": 2
+        },
+        {
+            "id": 23,
+            "first_name": "Lee",
+            "last_name": "Gorden",
+            "email": "lgordenm@unc.edu",
+            "password": "$2a$10$vHKA9CvDE8cwAuzW6qlc6eY3uaCjkpIBEukhK9xXqPDpSu0qhsfhC",
+            "role": 2
+        },
+        {
+            "id": 24,
+            "first_name": "Berry",
+            "last_name": "Sargerson",
+            "email": "bsargersonn@arizona.edu",
+            "password": "$2a$10$y/iEi/iSzwNwCTeCpMJKRe9yGIsMRZdlfHwNJrBOzFU9KED.wMeaq",
+            "role": 3
+        },
+        {
+            "id": 25,
+            "first_name": "Simonette",
+            "last_name": "Scamerden",
+            "email": "sscamerdeno@gnu.org",
+            "password": "$2a$10$v1Tab2eIpujIS8TtIWT6nO3/Yit3oOmjeLUppOsXlZk18evsmGDmS",
+            "role": 2
+        },
+        {
+            "id": 26,
+            "first_name": "Ilse",
+            "last_name": "Amorine",
+            "email": "iamorinep@instagram.com",
+            "password": "$2a$10$SOKvA4USIWlk/oAJLh1UlOY3ybkH8Uol03z1P347OI/NRSctaRa/K",
+            "role": 2
+        },
+        {
+            "id": 27,
+            "first_name": "Janeen",
+            "last_name": "Greenroa",
+            "email": "jgreenroaq@paypal.com",
+            "password": "$2a$10$63HNKMKhowFGZcsnHEuEf.k.uN8XAroVOHn7xjMTTAOCWn2ki/FAy",
+            "role": 3
+        },
+        {
+            "id": 28,
+            "first_name": "Dev",
+            "last_name": "Hardcastle",
+            "email": "dhardcastler@163.com",
+            "password": "$2a$10$RO9c8L3HGYouS3lmpfT5huK7nDrt2tds2k0b.tsnWPjaRILK3XLhW",
+            "role": 3
+        },
+        {
+            "id": 29,
+            "first_name": "Baird",
+            "last_name": "Laffoley-Lane",
+            "email": "blaffoleylanes@google.co.uk",
+            "password": "$2a$10$HK21k29hipkQMgPqwjy2IOFHMAsmw4oG6nBJfuQTv.TjXj2FKZHMG",
+            "role": 1
+        },
+        {
+            "id": 30,
+            "first_name": "Charlotte",
+            "last_name": "Tomaszynski",
+            "email": "ctomaszynskit@webeden.co.uk",
+            "password": "$2a$10$DdXtDFsrIXvq9NI0Brrji.VwvB/0fzAMZDwlO5ANCbyobGgCdGI2K",
+            "role": 2
+        }
+    ]
+}
